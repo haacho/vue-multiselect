@@ -1,7 +1,7 @@
 <template>
   <div
     :tabindex="searchable ? -1 : tabindex"
-    :class="{ 'multiselect--active': isOpen, 'multiselect--disabled': disabled, 'multiselect--above': isAbove }"
+    :class="{ 'multiselect--disabled': disabled, 'multiselect--above': isAbove }"
     @focus="activate()"
     @blur="searchable ? false : deactivate()"
     @keydown.self.down.prevent="pointerForward()"
@@ -12,7 +12,10 @@
     role="combobox"
     :aria-owns="'listbox-'+id">
       <slot name="caret" :toggle="toggle">
-        <div @mousedown.prevent.stop="toggle()" class="multiselect__select"></div>
+        <div @mousedown.prevent.stop="toggle()" class="multiselect__select">
+
+<svg width="1.2rem" height="1.2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard-1" stroke="#777777" stroke-width="1.3"><g id="Group"><path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path><path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path></g></g></g></svg>
+        </div>
       </slot>
       <slot name="clear" :search="search"></slot>
       <div ref="tags" class="multiselect__tags">
@@ -434,6 +437,7 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect {
+  /* border: 1px solid #ff9b00; */
   box-sizing: content-box;
   display: block;
   position: relative;
@@ -526,11 +530,17 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__tags {
-  min-height: 40px;
-  display: block;
+display: flex;
+  align-items: center;
+  border: 1px solid #ff9b00;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 80%;
+  min-height: 3rem;
+  /* display: block; */
   padding: 8px 40px 0 8px;
-  border-radius: 5px;
-  border: 1px solid #e8e8e8;
+/*   border-radius: 5px; */
+/*   border: 1px solid #e8e8e8; */
   background: #fff;
   font-size: 14px;
 }
@@ -543,7 +553,7 @@ fieldset[disabled] .multiselect {
   margin-right: 10px;
   color: #fff;
   line-height: 1;
-  background: #41b883;
+  background: #ff9b00;
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -600,14 +610,22 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ff9b00;
+  color: white;
+  width: 20%;
+  border: 1px solid #ff9b00;
   line-height: 16px;
-  display: block;
+  /* display: block; */
   position: absolute;
   box-sizing: border-box;
-  width: 40px;
-  height: 38px;
+  min-height: 3rem;
   right: 1px;
-  top: 1px;
+  /* top: 1px; */
   padding: 4px 8px;
   margin: 0;
   text-decoration: none;
@@ -616,7 +634,7 @@ fieldset[disabled] .multiselect {
   transition: transform 0.2s ease;
 }
 
-.multiselect__select:before {
+/* .multiselect__select:before {
   position: relative;
   right: 0;
   top: 65%;
@@ -626,7 +644,7 @@ fieldset[disabled] .multiselect {
   border-width: 5px 5px 0 5px;
   border-color: #999999 transparent transparent transparent;
   content: "";
-}
+} */
 
 .multiselect__placeholder {
   color: #adadad;
@@ -705,14 +723,14 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__option--highlight {
-  background: #41b883;
+  background: #ff9b00;
   outline: none;
   color: white;
 }
 
 .multiselect__option--highlight:after {
   content: attr(data-select);
-  background: #41b883;
+  background: #ff9b00;
   color: white;
 }
 
