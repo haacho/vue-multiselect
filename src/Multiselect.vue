@@ -14,7 +14,7 @@
       <slot name="caret" :toggle="toggle">
         <div @mousedown.prevent.stop="toggle()" class="multiselect__select">
 
-<svg width="1.2rem" height="1.2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard-1" stroke="#777777" stroke-width="1.3"><g id="Group"><path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path><path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path></g></g></g></svg>
+          <svg width="1.2rem" height="1.2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard-1" stroke="#777777" stroke-width="1.3"><g id="Group"><path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path><path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path></g></g></g></svg>
         </div>
       </slot>
       <slot name="clear" :search="search"></slot>
@@ -444,7 +444,7 @@ fieldset[disabled] .multiselect {
   width: 100%;
   min-height: 40px;
   text-align: left;
-  color: #35495e;
+  color: #ff9b00;
 }
 
 .multiselect * {
@@ -501,7 +501,7 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__input::placeholder {
-  color: #35495e;
+  color: #ff9b00;
 }
 
 .multiselect__tag ~ .multiselect__input,
@@ -546,14 +546,20 @@ display: flex;
 }
 
 .multiselect__tag {
+
+    color: #3d4144;
+    background: transparent;
+    border: 1px solid #f1802d;
+    font-weight: 700;
+
   position: relative;
   display: inline-block;
   padding: 4px 26px 4px 10px;
   border-radius: 5px;
   margin-right: 10px;
-  color: #fff;
+/*   color: #fff; */
   line-height: 1;
-  background: #ff9b00;
+ /*  background: #ff9b00; */
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -579,18 +585,18 @@ display: flex;
 
 .multiselect__tag-icon:after {
   content: "×";
-  color: #266d4d;
+  color: #f1802d;
   font-size: 14px;
 }
 
-.multiselect__tag-icon:focus,
+/* .multiselect__tag-icon:focus,
 .multiselect__tag-icon:hover {
   background: #369a6e;
-}
+} */
 
 .multiselect__tag-icon:focus:after,
 .multiselect__tag-icon:hover:after {
-  color: white;
+  color: #3d4144;
 }
 
 .multiselect__current {
@@ -623,7 +629,7 @@ display: flex;
   /* display: block; */
   position: absolute;
   box-sizing: border-box;
-  min-height: 3rem;
+  height: 100%;
   right: 1px;
   /* top: 1px; */
   padding: 4px 8px;
