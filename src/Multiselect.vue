@@ -14,7 +14,16 @@
       <slot name="caret" :toggle="toggle">
         <div @mousedown.prevent.stop="toggle()" class="multiselect__select">
 
-          <svg width="1.2rem" height="1.2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard-1" stroke="#777777" stroke-width="1.3"><g id="Group"><path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path><path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path></g></g></g></svg>
+          <svg width="1.2rem" height="1.2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Artboard-1" stroke="#777777" stroke-width="1.3">
+                <g id="Group" stroke="white">
+                  <path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path>
+                  <path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
       </slot>
       <slot name="clear" :search="search"></slot>
@@ -401,7 +410,7 @@ fieldset[disabled] .multiselect {
   width: 16px;
   height: 16px;
   border-radius: 100%;
-  border-color: #41b883 transparent transparent;
+  border-color: #ff9b00 transparent transparent;
   border-style: solid;
   border-width: 2px;
   box-shadow: 0 0 0 1px transparent;
@@ -530,12 +539,12 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__tags {
-display: flex;
+/* display: flex; */
   align-items: center;
   border: 1px solid #ff9b00;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  width: 80%;
+  width: 85%;
   min-height: 3rem;
   /* display: block; */
   padding: 8px 40px 0 8px;
@@ -623,7 +632,7 @@ display: flex;
   border-bottom-right-radius: 10px;
   background-color: #ff9b00;
   color: white;
-  width: 20%;
+  width: 15%;
   border: 1px solid #ff9b00;
   line-height: 16px;
   /* display: block; */
@@ -653,8 +662,9 @@ display: flex;
 } */
 
 .multiselect__placeholder {
-  color: #adadad;
-  display: inline-block;
+  color: #ff9b00;
+  font-size: medium;
+ /*  display: inline-block; */
   margin-bottom: 10px;
   padding-top: 2px;
 }
